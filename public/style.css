@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
 
+/* General */
 * {
   margin:0;
   padding:0;
@@ -24,6 +25,7 @@ header, .container {
   padding: 24px;
 }
 
+/* Header */
 h1 {
   margin: auto;
   font-size: 72px;
@@ -33,6 +35,7 @@ p.caption {
   margin-top: -16px;
 }
 
+/* Result */
 #query {
   width: 100%;
   font-size: 24px;
@@ -48,6 +51,7 @@ strong {
   background-color: yellow;
 }
 
+/* Table */
 td {
   padding-right: 16px;
 }
