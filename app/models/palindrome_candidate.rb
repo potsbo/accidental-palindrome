@@ -40,8 +40,8 @@ class PalindromeCandidate
       start: @start,
       finish: @finish,
       size: pronounce.size,
-      surface: surface,
-      pronounce: pronounce,
+      surface: surface.presence,
+      pronounce: pronounce.presence,
       palindrome: is_palindrome?,
     }
   end
