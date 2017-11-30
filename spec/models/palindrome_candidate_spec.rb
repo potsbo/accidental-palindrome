@@ -23,6 +23,7 @@ describe PalindromeCandidate do
       { input: 'どうやら、竹やぶ焼けた', output: '竹やぶ焼けた' },
       { input: 'どうやら、竹やぶ焼けたようだ', output: '竹やぶ焼けた' },
       { input: '竹やぶ、焼けた', output: '竹やぶ、焼けた' },
+      { input: '酢豚作りモリモリ食ったブス', output: '酢豚作りモリモリ食ったブス' },
     ]
 
     cases.each_with_index do |c,i|
