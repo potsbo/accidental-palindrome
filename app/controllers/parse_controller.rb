@@ -6,7 +6,7 @@ class ParseController < ApplicationController
   end
 
   def find
-    res = PalindromeCandidate.new(text: text).result
+    res = PalindromeFinder.new(text: text).result
     render json: res
   end
 

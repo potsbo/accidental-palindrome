@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe PalindromeCandidate do
+describe PalindromeFinder do
 
   let(:text) { '竹やぶ焼けた' }
-  let(:cand) { PalindromeCandidate.new(text: text) }
+  let(:cand) { PalindromeFinder.new(text: text) }
 
   cases = [
     { input: '竹やぶ焼けた', output: '竹やぶ焼けた' },

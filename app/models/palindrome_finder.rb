@@ -54,7 +54,7 @@ class Candidate
   end
 end
 
-class PalindromeCandidate
+class PalindromeFinder
   MAX_WORDS=20
 
   def initialize(param)
