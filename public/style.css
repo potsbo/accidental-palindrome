@@ -24,13 +24,13 @@ header, .container {
   padding: 24px;
 }
 
-p.caption {
-  margin-top: -16px;
-}
-
 h1 {
   margin: auto;
   font-size: 72px;
+}
+
+p.caption {
+  margin-top: -16px;
 }
 
 #query {
