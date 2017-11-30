@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ajax</title>
+  </head>
+  <body>
+    <h1>Accidental Palindrome</h1>
+
+    <label><input id="query" name="name" value=""></label>
+    <p><span id="text"></span></p>
+    <h3>最長の回文</h3>
+    <table>
+      <tr>
+        <td>最長の回文</td>
+        <td id="longest"></td> 
+      </tr>
+      <tr>
+        <td>読み</td>
+        <td id="pronounce"></td> 
+      </tr>
+      <tr>
+        <td>長さ</td>
+        <td id="length"></td> 
+      </tr>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+      //setup before functions
+      var typingTimer;                //timer identifier
+      var doneTypingInterval = 500;  //time in ms, 5 second for example
+      var $input = $('#query');
+
+      $input.on('keyup', function () {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(doneTyping, doneTypingInterval);
+      });
+
+      $input.on('keydown', function () {
+        clearTimeout(typingTimer);
+      });
+
+      //user is "finished typing," do something
+      function doneTyping () {
+          $.post("http://localhost:3000/find", {
+            text: $('#query').val()
+          }, function(data) {
+            console.log(data)
+            $("#text").html(data.text);
+            $("#longest").html(data.longest_palindrome.surface);
+            $("#pronounce").html(data.longest_palindrome.pronounce)
+            $("#length").html(data.longest_palindrome.size)
+          });
+      }
+    </script>
+  </body>
+</html>
