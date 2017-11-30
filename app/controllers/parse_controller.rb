@@ -5,6 +5,11 @@ class ParseController < ApplicationController
     render json: {result: res}
   end
 
+  def find
+    res = PalindromeCandidate.new(text: text).result
+    render json: res
+  end
+
   private
 
   def text

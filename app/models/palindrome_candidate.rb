@@ -62,6 +62,13 @@ class PalindromeCandidate
     @text = param[:text]
   end
 
+  def result
+    {
+      text: highlighted,
+      longest_palindrome: longest_palindrome.summary,
+    }
+  end
+
   def highlighted
     palindrome = longest_palindrome.surface
     @text.gsub(palindrome, "<strong>#{palindrome}</strong>")
