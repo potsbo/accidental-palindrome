@@ -35,8 +35,8 @@ describe PalindromeFinder do
 
     context 'when no palindrome found' do
       let(:text) {''}
-      it 'should return nil' do
-        expect(res).to be_nil
+      it 'should not return nil' do
+        expect(res).to be_a PalindromeCandidate
       end
     end
 
@@ -76,6 +76,16 @@ describe PalindromeFinder do
       end
     end
 
+    context 'when no palindrome found' do
+      let(:text) { '回文じゃない' }
+      it 'should not raise anything' do
+        expect{ res }.not_to raise_error
+      end
+    end
+  end
+
+  describe '#result' do
+    let(:res) { cand.result }
     context 'when no palindrome found' do
       let(:text) { '回文じゃない' }
       it 'should not raise anything' do

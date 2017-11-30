@@ -21,7 +21,7 @@ class PalindromeFinder
   end
 
   def longest_palindrome
-    @longest_palindrome ||= palindromes.max
+    @longest_palindrome ||= palindromes.max || PalindromeCandidate.no_result
   end
 
   def indices

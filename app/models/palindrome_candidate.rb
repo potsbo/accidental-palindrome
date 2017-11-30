@@ -3,7 +3,11 @@ class PalindromeCandidate
   INVALID_CHARS = ['(', ')']
   INVALID_PARTS = ['記号']
 
-  def initialize(index:, yomis:)
+  def self.no_result
+    PalindromeCandidate.new
+  end
+
+  def initialize(index: [], yomis: [])
     @start  = index[0]
     @finish = index[1]
     @yomis  = yomis
@@ -54,8 +58,9 @@ class PalindromeCandidate
 
   def valid?
     first = @yomis.first
+    return false if first.nil?
     return false if INVALID_PARTS.include? first[:part]
-    return false if INVALID_CHARS.include?(first[:surface])
+    return false if INVALID_CHARS.include? first[:surface]
     true
   end
 
