@@ -1,4 +1,4 @@
-class PalindromeCandidate < ApplicationRecord
+class PalindromeCandidate
   def initialize(param)
     param ||= {}
     @text = param[:text]
