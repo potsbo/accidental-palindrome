@@ -55,7 +55,7 @@
 
       //user is "finished typing," do something
       function doneTyping () {
-          $.post("http://localhost:3000/find", {
+          $.post("https://accidental-palindrome.herokuapp.com/find", { // TODO: make this configuable
             text: $('#query').val()
           }, function(data) {
             console.log(data)
