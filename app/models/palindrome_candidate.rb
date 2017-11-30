@@ -33,8 +33,14 @@ class Candidate
       size: pronounce.size,
       surface: surface,
       pronounce: pronounce,
-      palindrome: is_palindrome?
+      palindrome: is_palindrome?,
     }
+  end
+
+  def <=>(other)
+    size_def = pronounce.size - other.pronounce.size
+    return size_def unless size_def.zero?
+    surface.size - other.surface.size
   end
 end
 
@@ -47,22 +53,25 @@ class PalindromeCandidate
   end
 
   def longest_palindrome
-    l = palindromes.max {|a, b| a[:size] <=> b[:size] }
-    l[:surface] if l
+    palindromes.max&.surface
   end
 
-  def palindromes
-    return @palindromes if @palindromes.present?
+  def start_ends
     size = yomis.size
-    start_ends = (0..size).to_a.
+    (0..size).to_a.
       map{|i| (i..(i+MAX_WORDS)).to_a }.
       map{|i| i.map{|j| [i[0], j]}}.
       flatten(1).uniq.
       reject{|i| i[1] >= size }
-    @palindromes ||= start_ends.
-      map{|i| Candidate.new(index: i, yomis: yomis[i[0]..i[1]])}.
-      select{|c| c.is_palindrome? }.
-      map{|c| c.summary }
+  end
+
+  def candidates
+    @candidates ||= start_ends.
+      map{|i| Candidate.new(index: i, yomis: yomis[i[0]..i[1]])}
+  end
+
+  def palindromes
+    @palindromes ||= candidates.select{|c| c.is_palindrome? }
   end
 
   def yomis
