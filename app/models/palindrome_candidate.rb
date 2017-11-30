@@ -9,7 +9,7 @@ class PalindromeCandidate
   end
 
   def words
-    natto.parse(@text).split("\n")
+    natto.parse(@text).split("\n").reject{|s| s == 'EOS'}
   end
 
   private
