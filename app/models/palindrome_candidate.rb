@@ -1,8 +1,8 @@
 class Candidate
   def initialize(index:, yomis:)
-    @start     = index[0]
-    @finish    = index[1]
-    @yomis     = yomis
+    @start  = index[0]
+    @finish = index[1]
+    @yomis  = yomis
   end
 
   def pronounce
