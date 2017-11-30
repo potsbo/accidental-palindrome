@@ -8,8 +8,15 @@ class PalindromeCandidate
     @text
   end
 
+  def yomis
+    @yomis ||= words.
+      map{|s| s.split("\t")}.
+      map{|a| [a[0], a[1].split(',')[8]]}.
+      map{|a| {surface: a[0], pronounce: a[1]}}
+  end
+
   def words
-    natto.parse(@text).split("\n").reject{|s| s == 'EOS'}
+    @words ||= natto.parse(@text).split("\n").reject{|s| s == 'EOS'}
   end
 
   private
