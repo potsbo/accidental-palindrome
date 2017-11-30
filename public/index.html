@@ -10,7 +10,6 @@
 
     <label><input id="query" name="name" value=""></label>
     <p><span id="text"></span></p>
-    <h3>最長の回文</h3>
     <table>
       <tr>
         <td>最長の回文</td>
@@ -30,7 +29,7 @@
     <script>
       //setup before functions
       var typingTimer;                //timer identifier
-      var doneTypingInterval = 500;  //time in ms, 5 second for example
+      var doneTypingInterval = 100;  //time in ms, 5 second for example
       var $input = $('#query');
 
       $input.on('keyup', function () {
