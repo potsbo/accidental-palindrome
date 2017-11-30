@@ -2,12 +2,20 @@ require 'rails_helper'
 
 describe PalindromeCandidate do
 
-  let(:text) { 'なんか文章' }
+  let(:text) { '竹やぶ焼けた' }
   let(:cand) { PalindromeCandidate.new(text: text) }
 
   describe '#longest_palindrome' do
+    let(:res) { cand.longest_palindrome }
     it 'should return a String' do
       expect(res).to be_a String
+    end
+
+    context 'when no palindrome found' do
+      let(:text) {''}
+      it 'should return nil' do
+        expect(res).to be_nil
+      end
     end
 
     cases = [
@@ -20,10 +28,11 @@ describe PalindromeCandidate do
     cases.each_with_index do |c,i|
       input  = c[:input]
       output = c[:output]
-      let(:res) { cand.longest_palindrome }
-      let(:text) { input }
-      it "#{i+1}: should return '#{output}' for '#{input}'" do
-        expect(res).to eq output
+      describe "#{i+1} case" do
+        let(:text) { input }
+        it "should return '#{output}' for '#{input}'" do
+          expect(res).to eq output
+        end
       end
     end
   end

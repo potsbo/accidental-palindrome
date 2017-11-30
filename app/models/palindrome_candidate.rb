@@ -47,7 +47,8 @@ class PalindromeCandidate
   end
 
   def longest_palindrome
-    palindromes.max {|a, b| a[:size] <=> b[:size] }[:surface]
+    l = palindromes.max {|a, b| a[:size] <=> b[:size] }
+    l[:surface] if l
   end
 
   def palindromes
