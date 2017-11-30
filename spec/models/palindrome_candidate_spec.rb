@@ -10,6 +10,16 @@ describe PalindromeCandidate do
     it 'should return a String' do
       expect(res).to be_a String
     end
+
+    let(:text) { '竹やぶ焼けた' }
+    it 'should return 竹やぶ焼けた' do
+      expect(res).to eq '竹やぶ焼けた'
+    end
+
+    let(:text) { 'どうやら竹やぶ焼けたようだ' }
+    it 'should return 竹やぶ焼けた' do
+      expect(res).to eq '竹やぶ焼けた'
+    end
   end
 
   describe '#words' do
