@@ -9,7 +9,7 @@ class PalindromeCandidate
   end
 
   def words
-    natto.parse(@text)
+    natto.parse(@text).split("\n")
   end
 
   private

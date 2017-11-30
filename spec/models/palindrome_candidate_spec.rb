@@ -17,5 +17,9 @@ describe PalindromeCandidate do
     it 'should return an Array' do
       expect(res).to be_an Array
     end
+
+    it 'should not contain EOS' do
+      expect(res).not_to include 'EOS'
+    end
   end
 end
