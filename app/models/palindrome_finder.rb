@@ -22,7 +22,7 @@ class PalindromeFinder
     @longest_palindrome ||= palindromes.max
   end
 
-  def start_ends
+  def indices
     size = yomis.size
     (0..size).to_a.
       map{|i| (i..(i+MAX_WORDS)).to_a }.
@@ -32,7 +32,7 @@ class PalindromeFinder
   end
 
   def candidates
-    @candidates ||= start_ends.
+    @candidates ||= indices.
       map{|i| PalindromeCandidate.new(index: i, yomis: yomis[i[0]..i[1]])}
   end
 
