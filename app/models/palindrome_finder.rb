@@ -14,8 +14,10 @@ class PalindromeFinder
   end
 
   def highlighted
-    palindrome = longest_palindrome.surface
-    @text.gsub(palindrome, "<strong>#{palindrome}</strong>")
+    palindrome = longest_palindrome&.surface
+    str = @text
+    str = str.gsub(palindrome, "<strong>#{palindrome}</strong>") if palindrome.present?
+    str
   end
 
   def longest_palindrome
