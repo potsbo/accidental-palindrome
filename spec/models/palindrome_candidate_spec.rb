@@ -25,8 +25,12 @@ describe PalindromeCandidate do
       { input: '竹やぶ、焼けた', output: '竹やぶ、焼けた' },
       # { input: '酢豚作りモリモリ食ったブス', output: '酢豚作りモリモリ食ったブス' }, # スブタ"ヅ"クリ になってしまって難しい
       # { input: '肉の多い大乃国' }, # ダイノクニ
-      { input: 'まさか、逆さま？' }
-
+      { input: 'まさか、逆さま？' },
+      { input: '今朝美味しいおでんで美味しいお酒' },
+      { input: '力士会館前回貸切' },
+      { input: 'イタリアで暮らし楽でありたい' },
+      { input: '死にたくなるよと夜泣くタニシ' },
+      { input: '世界を崩したいなら泣いた雫を活かせ' },
     ]
 
     cases.each_with_index do |c,i|
