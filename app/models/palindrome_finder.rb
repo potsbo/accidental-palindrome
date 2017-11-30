@@ -1,5 +1,5 @@
 class PalindromeFinder
-  MAX_WORDS=20
+  MAX_WORDS = 20
 
   def initialize(param)
     param ||= {}
