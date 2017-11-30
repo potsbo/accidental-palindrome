@@ -20,6 +20,17 @@ class PalindromeCandidate
     @surface ||= @yomis.map{|y| y[:surface]}.join
   end
 
+  def is_palindrome?
+    return @is_palindrome unless @is_palindrome.nil?
+    return @is_palindrome = false unless valid?
+    str = pronounce
+    return @is_palindrome = false if str.size <= 1
+    for num in 1..str.size/2 do
+      return @is_palindrome = false if str[num-1] != str[str.size-num]
+    end
+    @is_palindrome = true
+  end
+
   def summary
     {
       start: @start,
@@ -48,14 +59,4 @@ class PalindromeCandidate
     true
   end
 
-  def is_palindrome?
-    return @is_palindrome unless @is_palindrome.nil?
-    return @is_palindrome = false unless valid?
-    str = pronounce
-    return @is_palindrome = false if str.size <= 1
-    for num in 1..str.size/2 do
-      return @is_palindrome = false if str[num-1] != str[str.size-num]
-    end
-    @is_palindrome = true
-  end
 end
