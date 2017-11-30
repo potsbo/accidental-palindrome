@@ -25,6 +25,10 @@ header, footer, .container {
   padding: 24px;
 }
 
+h2 {
+  margin-bottom: 8px;
+}
+
 /* Header */
 h1 {
   margin: auto;
@@ -64,6 +68,7 @@ td.label {
 footer {
   text-align: center;
 }
+
 footer a {
   color: black;
   text-decoration: none;
