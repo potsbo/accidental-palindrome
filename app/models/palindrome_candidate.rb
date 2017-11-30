@@ -62,8 +62,13 @@ class PalindromeCandidate
     @text = param[:text]
   end
 
+  def highlighted
+    palindrome = longest_palindrome.surface
+    @text.gsub(palindrome, "<strong>#{palindrome}</strong>")
+  end
+
   def longest_palindrome
-    palindromes.max
+    @longest_palindrome ||= palindromes.max
   end
 
   def start_ends
