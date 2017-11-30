@@ -1,4 +1,5 @@
 class Candidate
+  attr_reader :yomis
   INVALID_CHARS = ['(', ')']
   def initialize(index:, yomis:)
     @start  = index[0]
@@ -46,9 +47,10 @@ class Candidate
   end
 
   def <=>(other)
-    size_def = pronounce.size - other.pronounce.size
-    return size_def unless size_def.zero?
-    surface.size - other.surface.size
+    pronounce.size - other.pronounce.size
+    # size_def = pronounce.size - other.pronounce.size
+    # return size_def unless size_def.zero?
+    # surface.size - other.surface.size
   end
 end
 
@@ -61,7 +63,7 @@ class PalindromeCandidate
   end
 
   def longest_palindrome
-    palindromes.max&.surface
+    palindromes.max
   end
 
   def start_ends

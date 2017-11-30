@@ -8,7 +8,7 @@ describe PalindromeCandidate do
   describe '#longest_palindrome' do
     let(:res) { cand.longest_palindrome }
     it 'should return a String' do
-      expect(res).to be_a String
+      expect(res).to be_a Candidate
     end
 
     context 'when no palindrome found' do
@@ -25,7 +25,7 @@ describe PalindromeCandidate do
       { input: '竹やぶ、焼けた', output: '竹やぶ、焼けた' },
       # { input: '酢豚作りモリモリ食ったブス', output: '酢豚作りモリモリ食ったブス' }, # スブタ"ヅ"クリ になってしまって難しい
       # { input: '肉の多い大乃国' }, # ダイノクニ
-      { input: 'まさか、逆さま？' },
+      { input: 'まさか、逆さま' },
       { input: '今朝美味しいおでんで美味しいお酒' },
       { input: '力士会館前回貸切' },
       { input: 'イタリアで暮らし楽でありたい' },
@@ -33,6 +33,8 @@ describe PalindromeCandidate do
       { input: '世界を崩したいなら泣いた雫を活かせ' },
       { input: "あなたに似たなあ" },
       { input: ")あなたに似たなあ", output: 'あなたに似たなあ' },
+      { input: "世の中ね、顔かお金かなのよ" },
+      { input: "もう十年以上も前のことになると思うが、昔母が「世の中ね、顔かお金かなのよ」と言ってのが非常に鮮明に記憶に残っている。", output: "世の中ね、顔かお金かなのよ" },
     ]
 
     cases.each_with_index do |c,i|
@@ -41,7 +43,7 @@ describe PalindromeCandidate do
       describe "#{i+1} case" do
         let(:text) { input }
         it "should return '#{output}' for '#{input}'" do
-          expect(res).to eq output
+          expect(res.surface).to eq output
         end
       end
     end
