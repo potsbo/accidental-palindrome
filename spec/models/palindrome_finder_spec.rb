@@ -75,5 +75,12 @@ describe PalindromeFinder do
         end
       end
     end
+
+    context 'when no palindrome found' do
+      let(:text) { '回文じゃない' }
+      it 'should not raise anything' do
+        expect{ res }.not_to raise_error
+      end
+    end
   end
 end
