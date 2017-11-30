@@ -11,4 +11,11 @@ describe PalindromeCandidate do
       expect(res).to be_a String
     end
   end
+
+  describe '#words' do
+    let(:res) { cand.words }
+    it 'should return an Array' do
+      expect(res).to be_an Array
+    end
+  end
 end

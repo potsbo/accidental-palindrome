@@ -7,4 +7,14 @@ class PalindromeCandidate
   def longest_palindrome
     @text
   end
+
+  def words
+    natto.parse(@text)
+  end
+
+  private
+
+  def natto
+    @natto ||= Natto::MeCab.new
+  end
 end
