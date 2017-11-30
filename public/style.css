@@ -39,3 +39,10 @@ strong {
   background-color: yellow;
 }
 
+td {
+  padding-right: 16px;
+}
+
+td.label {
+  font-weight: 300;
+}
