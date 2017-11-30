@@ -1,7 +1,27 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
 
+*{
+  margin:0;
+  padding:0;
+}
+
 html {
   font-family: 'Noto Sans JP';
+}
+
+article, header {
+  max-width: 960px;
+  margin: auto;
+}
+
+header {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+h1 {
+  margin: auto;
+  font-size: 36px;
 }
 
 strong {
