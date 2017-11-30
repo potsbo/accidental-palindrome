@@ -33,7 +33,7 @@ class PalindromeFinder
 
   def candidates
     @candidates ||= start_ends.
-      map{|i| Candidate.new(index: i, yomis: yomis[i[0]..i[1]])}
+      map{|i| PalindromeCandidate.new(index: i, yomis: yomis[i[0]..i[1]])}
   end
 
   def palindromes

@@ -30,7 +30,7 @@ describe PalindromeFinder do
   describe '#longest_palindrome' do
     let(:res) { cand.longest_palindrome }
     it 'should return a String' do
-      expect(res).to be_a Candidate
+      expect(res).to be_a PalindromeCandidate
     end
 
     context 'when no palindrome found' do

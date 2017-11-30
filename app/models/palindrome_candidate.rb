@@ -1,4 +1,4 @@
-class Candidate
+class PalindromeCandidate
   attr_reader :yomis
   INVALID_CHARS = ['(', ')']
   def initialize(index:, yomis:)
