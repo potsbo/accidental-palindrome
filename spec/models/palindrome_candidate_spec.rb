@@ -31,6 +31,7 @@ describe PalindromeCandidate do
       { input: 'イタリアで暮らし楽でありたい' },
       { input: '死にたくなるよと夜泣くタニシ' },
       { input: '世界を崩したいなら泣いた雫を活かせ' },
+      { input: "あなたに似たなあ" },
     ]
 
     cases.each_with_index do |c,i|
