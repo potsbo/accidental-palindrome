@@ -1,6 +1,8 @@
 class PalindromeCandidate
   attr_reader :yomis
   INVALID_CHARS = ['(', ')']
+  INVALID_PARTS = ['記号']
+
   def initialize(index:, yomis:)
     @start  = index[0]
     @finish = index[1]
@@ -9,14 +11,14 @@ class PalindromeCandidate
 
   def valid?
     first = @yomis.first
-    return false if first[:part] == '記号'
+    return false if INVALID_PARTS.include? first[:part]
     return false if INVALID_CHARS.include?(first[:surface])
     true
   end
 
   def pronounce
     @pronounce ||= @yomis.
-      reject{|y| y[:part] == '記号'}.
+      reject{|y| INVALID_PARTS.include? y[:part]}.
       map{|y| y[:pronounce]}.join
   end
 
