@@ -61,6 +61,9 @@ td.label {
 }
 
 /* Footer */
+footer {
+  text-align: center;
+}
 footer a {
   color: black;
   text-decoration: none;
