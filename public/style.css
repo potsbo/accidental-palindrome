@@ -16,12 +16,12 @@ body {
   padding-top: 16px;
 }
 
-article, header {
+article, header, footer {
   max-width: 960px;
   margin: auto;
 }
 
-header, .container {
+header, footer, .container {
   padding: 24px;
 }
 
@@ -58,4 +58,10 @@ td {
 
 td.label {
   font-weight: 500;
+}
+
+/* Footer */
+footer a {
+  color: black;
+  text-decoration: none;
 }
