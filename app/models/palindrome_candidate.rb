@@ -1,8 +1,16 @@
 class Candidate
+  INVALID_CHARS = ['(', ')']
   def initialize(index:, yomis:)
     @start  = index[0]
     @finish = index[1]
     @yomis  = yomis
+  end
+
+  def valid?
+    first = @yomis.first
+    return false if first[:part] == '記号'
+    return false if INVALID_CHARS.include?(first[:surface])
+    true
   end
 
   def pronounce
@@ -17,7 +25,7 @@ class Candidate
 
   def is_palindrome?
     return @is_palindrome unless @is_palindrome.nil?
-    return @is_palindrome = false if @yomis.first[:part] == '記号'
+    return @is_palindrome = false unless valid?
     str = pronounce
     return @is_palindrome = false if str.size <= 1
     for num in 1..str.size/2 do
