@@ -25,6 +25,7 @@ describe PalindromeFinder do
     { input: ")あなたに似たなあ", output: 'あなたに似たなあ' },
     { input: "世の中ね、顔かお金かなのよ" },
     { input: "もう十年以上も前のことになると思うが、昔母が「世の中ね、顔かお金かなのよ」と言ってのが非常に鮮明に記憶に残っている。", output: "世の中ね、顔かお金かなのよ" },
+    { input: "菓子与え肥えたアシカ" },
     { input: "Was it a cat I saw" },
     { input: "Madam, Im Adam" },
     # { input: "Madam, I'm Adam" }, # TODO: a bit difficult
