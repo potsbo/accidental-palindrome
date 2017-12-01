@@ -35,7 +35,7 @@ class PalindromeCandidate
     return @is_palindrome = false unless valid?
     str = pronounce
     for num in 1..str.size/2 do
-      return @is_palindrome = false if str[num-1] != str[str.size-num]
+      return @is_palindrome = false if str[num-1] != str[-num]
     end
     @is_palindrome = true
   end
