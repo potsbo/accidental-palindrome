@@ -1,4 +1,4 @@
-var typingTimer;                //timer identifier
+var typingTimer;               //timer identifier
 var doneTypingInterval = 100;  //time in ms, 5 second for example
 var $input = $('#query');
 
