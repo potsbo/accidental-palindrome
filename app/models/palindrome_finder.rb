@@ -43,10 +43,7 @@ class PalindromeFinder
   end
 
   def yomis
-    @yomis ||= words.
-      map{|s| s.split("\t")}.
-      map{|a| [a[0], a[1].split(',')[7] || a[0], a[1].split(',')[0] ] }.
-      map{|a| {surface: a[0], pronounce: a[1].downcase, part: a[2]}}
+    @yomis ||= words.map{|s| Yomi.new(s) }
   end
 
   def words

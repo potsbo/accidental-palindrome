@@ -16,14 +16,18 @@ class PalindromeCandidate
   # attributes
   def pronounce
     @pronounce ||= @yomis.
-      reject{|y| INVALID_PARTS.include? y[:part]}.
-      map{|y| y[:pronounce]}.join
+      reject{|y| INVALID_PARTS.include? y.part}.
+      map{|y| y.pronounce}.join
   end
 
   def surface
     return @surface if @surface
-    joint = @yomis.all?{|y| y[:surface].ascii_only? } ? ' ' : nil
-    @surface = @yomis.map{|y| y[:surface]}.join(joint)
+    joint = @yomis.all?{|y| y.surface.ascii_only? } ? ' ' : nil
+    @surface = @yomis.map{|y| y.surface}.join(joint)
+    Yomi::BLACK_LIST.each do |char|
+      @surface.gsub!(" #{char}", char)
+    end
+    @surface
   end
 
   def is_palindrome?
@@ -61,8 +65,8 @@ class PalindromeCandidate
   def valid?
     first = @yomis.first
     return false if first.nil?
-    return false if INVALID_PARTS.include? first[:part]
-    return false if INVALID_CHARS.include? first[:surface]
+    return false if INVALID_PARTS.include? first.part
+    return false if INVALID_CHARS.include? first.surface
     true
   end
 
