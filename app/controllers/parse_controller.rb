@@ -5,6 +5,10 @@ class ParseController < ApplicationController
     render json: res
   end
 
+  def palindromes
+    render json: Palindrome.order('size DESC').limit(10).as_json
+  end
+
   # for test
   def parse
     nm = Natto::MeCab.new
