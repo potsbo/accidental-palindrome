@@ -3,7 +3,7 @@ var doneTypingInterval = 100;  //time in ms, 5 second for example
 var $input = $('#query');
 
 function doneTyping() {
-  $.post("https://accidental-palindrome.herokuapp.com/find", { // TODO: make this configuable
+  $.post("https://accidental-palindrome.herokuapp.com/find", { // TODO: make this configurable
     text: $('#query').val()
   }, function(data) {
     $("#text").html(data.text);
