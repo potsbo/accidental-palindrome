@@ -7,8 +7,8 @@ function doneTyping () {
     text: $('#query').val()
   }, function(data) {
     $("#text").html(data.text);
-    $("#longest").html(data.longest_palindrome.surface) || 'ー'
-    $("#pronounce").html(data.longest_palindrome.pronounce) || 'ー'
+    $("#longest").html(data.longest_palindrome.surface || 'ー')
+    $("#pronounce").html(data.longest_palindrome.pronounce || 'ー')
     $("#length").html(data.longest_palindrome.size)
   });
 }
