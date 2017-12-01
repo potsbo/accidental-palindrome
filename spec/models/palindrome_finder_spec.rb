@@ -33,7 +33,7 @@ describe PalindromeFinder do
   ]
 
   describe '#longest_palindrome' do
-    let(:res) { cand.longest_palindrome }
+    let(:res) { cand.send(:longest_palindrome) }
     it 'should return a PalindromeCandidate' do
       expect(res).to be_a PalindromeCandidate
     end
