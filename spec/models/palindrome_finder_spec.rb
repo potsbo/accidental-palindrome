@@ -69,7 +69,7 @@ describe PalindromeFinder do
   end
 
   describe '#highlighted' do
-    let(:res) { cand.highlighted }
+    let(:res) { cand.send(:highlighted) }
     cases.each_with_index do |c,i|
       input  = c[:input]
       output = c[:output] || c[:input]
