@@ -33,9 +33,8 @@ class PalindromeCandidate
   def is_palindrome?
     return @is_palindrome unless @is_palindrome.nil?
     return @is_palindrome = false unless valid?
-    str = pronounce
-    for num in 1..str.size/2 do
-      return @is_palindrome = false if str[num-1] != str[-num]
+    for num in 1..pronounce.size/2 do
+      return @is_palindrome = false if pronounce[num-1] != pronounce[-num]
     end
     @is_palindrome = true
   end
