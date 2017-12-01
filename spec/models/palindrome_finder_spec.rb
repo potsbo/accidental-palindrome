@@ -58,7 +58,7 @@ describe PalindromeFinder do
   end
 
   describe '#words' do
-    let(:res) { cand.words }
+    let(:res) { cand.send(:words) }
     it 'should return an Array' do
       expect(res).to be_an Array
     end
