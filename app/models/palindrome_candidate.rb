@@ -64,9 +64,9 @@ class PalindromeCandidate
   def valid?
     first = @yomis.first
     return false if first.nil?
-    return false if str.size <= 1
     return false if INVALID_PARTS.include? first.part
     return false if INVALID_CHARS.include? first.surface
+    return false if pronounce.size <= 1
     true
   end
 end
