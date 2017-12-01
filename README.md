@@ -1,24 +1,22 @@
-# README
+# Accidental Palindrome - 偶然回文
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+文章中に偶然含まれている回文をさがすサービスです。
 
-Things you may want to cover:
+## Example
 
-* Ruby version
+- "なんか竹藪焼けたらしい" -> "竹藪焼けた"
+- "そんな、まさか逆さまなのか？" -> "まさか逆さま"
 
-* System dependencies
+## Development
 
-* Configuration
+### Dependencies
 
-* Database creation
+- Ruby
+- MeCab
 
-* Database initialization
+### Getting Started
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+$ script/bootstrap
+$ rails server
+```
