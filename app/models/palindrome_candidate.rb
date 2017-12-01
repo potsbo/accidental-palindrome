@@ -69,5 +69,4 @@ class PalindromeCandidate
     return false if INVALID_CHARS.include? first.surface
     true
   end
-
 end
