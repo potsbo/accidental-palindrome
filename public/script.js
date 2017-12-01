@@ -3,7 +3,8 @@ var doneTypingInterval = 100; // ms
 var $input = $('#query');
 
 function doneTyping() {
-  $.post("https://accidental-palindrome.herokuapp.com/find", { // TODO: make this configurable
+  // $.post("https://accidental-palindrome.herokuapp.com/find", { // TODO: make this configurable
+  $.post("http://localhost:3000/find", { // TODO: make this configurable
     text: $('#query').val()
   }, function(data) {
     $("#text").html(data.text);
