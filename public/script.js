@@ -9,7 +9,7 @@ function doneTyping() {
     $("#text").html(data.text);
     $("#longest").html(data.longest_palindrome.surface || 'ー');
     $("#pronounce").html(data.longest_palindrome.pronounce || 'ー');
-    $("#length").html(data.longest_palindrome.size);
+    $("#length").html(data.longest_palindrome.size || 0);
   });
 }
 
