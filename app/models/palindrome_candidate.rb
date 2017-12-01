@@ -34,7 +34,6 @@ class PalindromeCandidate
     return @is_palindrome unless @is_palindrome.nil?
     return @is_palindrome = false unless valid?
     str = pronounce
-    return @is_palindrome = false if str.size <= 1
     for num in 1..str.size/2 do
       return @is_palindrome = false if str[num-1] != str[str.size-num]
     end
@@ -65,6 +64,7 @@ class PalindromeCandidate
   def valid?
     first = @yomis.first
     return false if first.nil?
+    return false if str.size <= 1
     return false if INVALID_PARTS.include? first.part
     return false if INVALID_CHARS.include? first.surface
     true
