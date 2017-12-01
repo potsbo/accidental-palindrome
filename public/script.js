@@ -1,7 +1,7 @@
 var typingTimer;
 var doneTypingInterval = 100; // ms
 var $input = $('#query');
-var host = "http://localhost:3000";
+var host = "https://accidental-palindrome.herokuapp.com";
 
 function doneTyping() {
   // $.post("https://accidental-palindrome.herokuapp.com/find", { // TODO: make this configurable
