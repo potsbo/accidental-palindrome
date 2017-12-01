@@ -45,8 +45,8 @@ class PalindromeFinder
   def yomis
     @yomis ||= words.
       map{|s| s.split("\t")}.
-      map{|a| [a[0], a[1].split(',')[7], a[1].split(',')[0] ] }.
-      map{|a| {surface: a[0], pronounce: a[1], part: a[2]}}
+      map{|a| [a[0], a[1].split(',')[7] || a[0], a[1].split(',')[0] ] }.
+      map{|a| {surface: a[0], pronounce: a[1].downcase, part: a[2]}}
   end
 
   def words

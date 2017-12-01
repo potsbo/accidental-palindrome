@@ -21,7 +21,9 @@ class PalindromeCandidate
   end
 
   def surface
-    @surface ||= @yomis.map{|y| y[:surface]}.join
+    return @surface if @surface
+    joint = @yomis.all?{|y| y[:surface].ascii_only? } ? ' ' : nil
+    @surface = @yomis.map{|y| y[:surface]}.join(joint)
   end
 
   def is_palindrome?
