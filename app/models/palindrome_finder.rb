@@ -13,6 +13,8 @@ class PalindromeFinder
     }
   end
 
+  private
+
   def highlighted
     palindrome = longest_palindrome&.surface
     str = @text
@@ -25,10 +27,10 @@ class PalindromeFinder
   end
 
   def indices
-    size = yomis.size
-    (0..size).to_a.
-      map{|i| (i..(i+MAX_WORDS)).to_a }.
-      map{|i| i.map{|j| [i[0], j]}}.
+    size   = yomis.size
+    starts = (0..size).to_a
+    ranges = starts.map{|i| (i..(i+MAX_WORDS)).to_a }
+    ranges.map{|i| i.map{|j| [i[0], j]}}.
       flatten(1).uniq.
       reject{|i| i[1] >= size }
   end
@@ -50,7 +52,6 @@ class PalindromeFinder
     @words ||= natto.parse(@text).split("\n").reject{|s| s == 'EOS'}
   end
 
-  private
 
   def natto
     @natto ||= Natto::MeCab.new
