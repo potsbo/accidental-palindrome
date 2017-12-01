@@ -28,6 +28,7 @@ describe PalindromeFinder do
     { input: "Was it a cat I saw" },
     { input: "Madam, Im Adam" },
     # { input: "Madam, I'm Adam" }, # TODO: a bit difficult
+    { input: "No lemon, no melon" },
   ]
 
   describe '#longest_palindrome' do
